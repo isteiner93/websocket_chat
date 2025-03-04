@@ -1,3 +1,6 @@
+import eventlet
+eventlet.monkey_patch()  # Ensure this is called before other imports
+
 from flask import Flask, render_template
 from flask_socketio import SocketIO
 
@@ -11,7 +14,6 @@ def index():
 @socketio.on("message")
 def handle_message(msg):
     print(f"Message: {msg}")
-    # Use emit for broadcasting the message to all clients
     socketio.emit("message", msg)
 
 if __name__ == "__main__":
