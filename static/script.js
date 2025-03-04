@@ -20,9 +20,18 @@ socket.on("message", (data) => {
 
 function sendMessage() {
     const input = document.getElementById("message");
-    const message = input.value;
-    if (message.trim() !== "") {
-        socket.emit("message", { username: username, message: message });
+    const message = input.value.trim();
+    if (message !== "") {
+        if (message === "/clearchat") {
+            socket.emit("clear");
+        } else {
+            socket.emit("message", { username: username, message: message });
+        }
         input.value = "";
     }
 }
+
+socket.on("clear", () => {
+    const messageContainer = document.getElementById("messages");
+    messageContainer.innerHTML = ""; // Clear all messages
+});

@@ -18,5 +18,10 @@ def handle_message(data):
     print(f"Message from {username}: {message}")
     socketio.emit("message", {"username": username, "message": message})
 
+@socketio.on("clear")
+def clear_messages():
+    print("Chat cleared by command.")
+    socketio.emit("clear")
+
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000)
