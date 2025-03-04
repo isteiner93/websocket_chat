@@ -31,6 +31,13 @@ function sendMessage() {
     }
 }
 
+// Send message on Enter key press
+document.getElementById("message").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        sendMessage();
+    }
+});
+
 socket.on("clear", () => {
     const messageContainer = document.getElementById("messages");
     messageContainer.innerHTML = ""; // Clear all messages
