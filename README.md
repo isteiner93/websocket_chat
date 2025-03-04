@@ -1,7 +1,8 @@
 # Chat Application with Flask, WebSockets, and SQLite
 
 This is a simple chat application built using Flask, Flask-SocketIO, and SQLite for local storage. The app allows users to send and receive messages in real-time, as well as clear all messages with a command.
-![image](https://github.com/user-attachments/assets/b0527f06-ba07-4a46-b6bc-c328328f2d6e)
+
+![image](https://github.com/user-attachments/assets/b0527f06-ba07-4a46-b6bc-c328328f2d6e){: width="300px"}
 
 ## Features
 
