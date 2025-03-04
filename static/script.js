@@ -1,10 +1,11 @@
 let socket = io();
-let username = `User${Math.floor(Math.random() * 1000)}`; // Default username
+const userId = `User${Math.floor(Math.random() * 1000)}`; // Unique user ID
+let username = userId; // Default username
 
 function setUsername() {
     const input = document.getElementById("username");
     if (input.value.trim() !== "") {
-        username = input.value;
+        username = `${input.value} (${userId})`;
         input.value = "";
         alert(`Username set to ${username}`);
     }
