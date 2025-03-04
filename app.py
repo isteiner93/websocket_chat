@@ -11,7 +11,8 @@ def index():
 @socketio.on("message")
 def handle_message(msg):
     print(f"Message: {msg}")
-    socketio.send(msg, broadcast=True)  # Broadcasting the message
+    # Use emit for broadcasting the message to all clients
+    socketio.emit("message", msg)
 
 if __name__ == "__main__":
     socketio.run(app, host="0.0.0.0", port=5000)
