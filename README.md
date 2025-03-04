@@ -1,2 +1,2 @@
 # websocket_chat
-web-based 
+web-based simple chat using websocket and flask
